@@ -4,13 +4,9 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   preprocess: vitePreprocess(),
-
   kit: {
-    // O adapter-vercel resolve o problema do diretório de saída automaticamente
-    adapter: adapter(),
-    alias: {
-      $lib: './src/lib'
-    }
+    // Aqui é onde a mágica acontece. O adapter-vercel NÃO gera pasta "public"
+    adapter: adapter()
   }
 };
 
